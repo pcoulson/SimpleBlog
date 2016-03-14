@@ -80,10 +80,11 @@ class user {
 	 */
 	public function validateInput() {
 
-		$errors = array();		// Initialise an error array
+		$errors = array();														// Initialise an error array
 
-		// Remove leading spaces and escape the input strings.
-		// Save the validated values to be used for the new user.
+		// Remove leading spaces from the input strings and
+		// save the validated values to be used for the new user.
+
 		$this->_fname = trim($_POST['fname']);
 		$this->_lname = trim($_POST['lname']);
 		$this->_email = trim(strtolower($_POST['email']));
@@ -128,7 +129,7 @@ class user {
 	public function createNewUser() {
 
 		// Get the hash value of the password
-		$hashedPassword = $this->passwordHash($this->_password);				// Has the password
+		$hashedPassword = $this->passwordHash($this->_password);				// Create a hash value of the password
 
 		try {
 			// Prepare the insert statement.
